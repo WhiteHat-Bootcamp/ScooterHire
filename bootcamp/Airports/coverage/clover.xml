@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1610458510483" clover="3.2.0">
+  <project timestamp="1610458510484" name="All files">
+    <metrics statements="12" coveredstatements="10" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="2" elements="21" coveredelements="18" complexity="0" loc="12" ncloc="12" packages="1" files="2" classes="2"/>
+    <file name="Bag.js" path="C:\Users\tanya\Documents\repos\WhiteHat\bootcamp\Airports\Bag.js">
+      <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <line num="10" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="12" count="1" type="stmt"/>
+      <line num="14" count="3" type="stmt"/>
+      <line num="18" count="2" type="stmt"/>
+    </file>
+    <file name="Passenger.js" path="C:\Users\tanya\Documents\repos\WhiteHat\bootcamp\Airports\Passenger.js">
+      <metrics statements="8" coveredstatements="6" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="1"/>
+      <line num="17" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="19" count="1" type="stmt"/>
+      <line num="21" count="2" type="stmt"/>
+      <line num="22" count="2" type="stmt"/>
+      <line num="23" count="2" type="stmt"/>
+      <line num="27" count="0" type="stmt"/>
+      <line num="28" count="0" type="stmt"/>
+      <line num="33" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>

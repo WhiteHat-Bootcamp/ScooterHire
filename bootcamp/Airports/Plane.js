@@ -5,6 +5,10 @@ class Plane
     boardedPassengers;
     totalBoardedPassengers;
 
+     /** construct with the origin and destination of the plane
+     * @param {string} origin
+     * @param {string} origin*/
+
     constructor(origin, destination)
     {
         this.origin = origin;
@@ -17,5 +21,10 @@ class Plane
         this.totalBoardedPassengers += 1; 
     }
 
-    module.exports(Plane);
+    takeOff()
+    {
+        
+    }
 }
+
+module.exports = Plane;
