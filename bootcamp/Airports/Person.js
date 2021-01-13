@@ -5,8 +5,8 @@
 class Person 
 {
     name;
-    bags;
-    totalBags;
+    bags=[];
+    totalBags=0;
 
      /** constructs with the name of the person and details regarding their bags
      * @param {string} name

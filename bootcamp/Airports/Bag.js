@@ -1,9 +1,14 @@
+/**
+ * Represents a bag carried by a passenger on an airplane .
+ */
+
 class Bag
 {
     weight;
 
-    /** Represents a bag carried by a passenger on an airplane 
-     * constructor: @param {number} weight */
+    /** Constructs the bag with the weight parameter 
+     * @param {number} weight 
+     * */
 
     constructor(weight)
     {

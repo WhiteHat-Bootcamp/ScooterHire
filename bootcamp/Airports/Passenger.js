@@ -19,18 +19,18 @@ class Passenger extends Person
         {
             throw new Error('Passenger must have a ticket number to fly!');
         }
-        super(name, bags, totalBags);
+        super(name, totalBags, bags);
         this.ticketNumber = ticketNumber;
     }
 
     addBag(bag){
         this.bags.push(bag);
-        totalBags += 1;
+        this.totalBags += 1;
     }
 
-    boardPlane(plane)
+    boardPlane(Plane) //Calls the Plane method of board passenger and updates Plane properties
     {
-        plane.boardPassenger();
+        Plane.boardPassenger(this);
     }
 
 }

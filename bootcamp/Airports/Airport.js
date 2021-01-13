@@ -6,34 +6,42 @@ const Plane = require('./Plane.js');
 class Airport
 {
     city; //string
-    totalTerminals //int
-    totalPlanes; //int
-    dockedPlanes; //string[]
+    totalTerminals = 0; //int
+    totalPlanes = 0; //int
+    dockedPlanes = []; //[]
+    static allAirports = []; 
 
      /** construct with the name of the passenger and details regarding their bags
-     * @param {string} city
-     * @param {number} terminals*/
+     * @param {string} city;
+     * @param {number} totalTerminals;
+     * */
 
-    constructor (city, terminals)
+    constructor (city, totalTerminals)
     {
         this.city = city;
         this.totalTerminals = totalTerminals;
+        Airport.allAirports.push(this);
     }
 
-    landPlane(Plane)
+    landPlane(Plane) //Is automatically called when the Plane class's takeOff() method is called
     {
         this.dockedPlanes.push(Plane);
-        totalPlanes +=1;
+        this.totalPlanes +=1;
+        Plane.destination = Plane.origin;
+        Plane.origin = Plane.destination;
     }
 
-    takeOffPlane(Plane)
+    takeOffPlane(Plane) //If plane takes off from an airport, it calls the landPlane function of the destination airport.
     {
-        this.dockedPlanes.pull(Plane);
-        totalPlanes -=1;
-        // find index of plane
-        // find destination
-        // find airport that belongs to that 
-        // call LandPlane
+        this.dockedPlanes.splice(this.dockedPlanes.indexOf(Plane), 1);
+        this.totalPlanes -=1;
+        Airport.allAirports.forEach(Airport =>
+            {
+                if (Airport.city == Plane.destination)
+                {
+                    Airport.landPlane(Plane)
+                }
+            })
     }
     
 }

@@ -1,5 +1,3 @@
-//const { exportAllDeclaration } = require("@babel/types")
-
 const Bag = require ("./Bag.js");
 
 describe('Bag objects', () => 

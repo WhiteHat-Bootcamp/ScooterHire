@@ -27,4 +27,13 @@ describe('Passenger', function()
         expect(EK606.boardedPassengers).toEqual([chandler]);
     })
 
+    test('addBag adds a bag', function()
+    {
+        const phoebe = new Passenger(149587, "Phoebe", 2, [10, 24]);
+        const thirdBag = new Bag(20);
+        phoebe.addBag(thirdBag);
+        expect(phoebe.totalBags).toEqual(3);
+        expect(phoebe.bags).toEqual([10, 24, thirdBag]);
+    })
+
 })
