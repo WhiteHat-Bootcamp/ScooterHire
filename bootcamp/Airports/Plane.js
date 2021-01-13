@@ -2,8 +2,8 @@ class Plane
 {
     origin;
     destination;
-    boardedPassengers;
-    totalBoardedPassengers;
+    boardedPassengers = [];
+    totalBoardedPassengers = 0;
 
      /** construct with the origin and destination of the plane
      * @param {string} origin
@@ -15,9 +15,9 @@ class Plane
         this.destination = destination;
     }
 
-    boardPassenger(Passenger)
+    boardPassenger(passenger)
     {
-        this.boardedPassengers.push(Passenger);
+        this.boardedPassengers.push(passenger);
         this.totalBoardedPassengers += 1; 
     }
 

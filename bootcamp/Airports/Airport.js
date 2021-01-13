@@ -1,3 +1,8 @@
+const Plane = require('./Plane.js');
+
+/**
+ * Airport class - located in a city; docks, lands and flies planes from the Plane class. 
+ */
 class Airport
 {
     city; //string

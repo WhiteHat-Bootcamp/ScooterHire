@@ -1,15 +1,17 @@
 const Person = require("./Person.js");
 const Plane = require("./Plane.js");
 
-class Passenger extends Person{
-    
+/**
+ * Passenger class - inherits from Person. Adds a new property of ticket number and two methods (addBag and boardPlane)
+ */
+class Passenger extends Person
+{
     //properties
+    ticketNumber; 
 
      /** construct with the name and ticket number of the passenger and details regarding their bags
      * @param {int} ticketNumber
      * Default arguments of 0 and empty for the bags */
-
-    ticketNumber; 
 
     constructor(ticketNumber, name, totalBags, bags)
     {
@@ -26,9 +28,9 @@ class Passenger extends Person{
         totalBags += 1;
     }
 
-    boardPlane(Plane)
+    boardPlane(plane)
     {
-        Plane.boardPassenger();
+        plane.boardPassenger();
     }
 
 }

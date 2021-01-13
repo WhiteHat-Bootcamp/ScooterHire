@@ -24,7 +24,7 @@ describe('Passenger', function()
         const EK606 = new Plane("Vancouver", "London");
         chandler.boardPlane(EK606);
         expect(EK606.totalBoardedPassengers).toEqual(1);
-        expect(EK606.boardPassengers).toEqual([Chandler]);
+        expect(EK606.boardedPassengers).toEqual([chandler]);
     })
 
 })

@@ -1,14 +1,19 @@
+/**
+ * One of the most rudimentary classes - creates a person as a base class. Crewmember and Passenger inherit from this class.
+ */
+
 class Person 
 {
     name;
     bags;
     totalBags;
 
-     /** construct with the name of the person and details regarding their bags
+     /** constructs with the name of the person and details regarding their bags
      * @param {string} name
      * @param {number} totalBags
      * @param {number []} bags 
-     * Default arguments of 0 and empty for the bags */
+     * Default arguments of 0 and empty for the bags 
+     * */
 
     constructor(name, totalBags=0, bags=[])
     {
