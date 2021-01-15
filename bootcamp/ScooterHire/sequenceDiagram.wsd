@@ -1,0 +1,44 @@
+@@startuml
+
+title "Book Scooter - Sequence Diagram if all goes to plan"
+
+actor Customer
+actor Cashier #Green
+actor Mechanic #Red
+
+entity Scooter
+entity Battery
+database HireStation
+
+Customer->Cashier: Booking Request (includes Scooter type)
+Cashier->HireStation: Check Availability,Battery and Broken Status
+HireStation->HireStation: Check inventory
+HireStation-->>Cashier: Scooters are available and in working condition
+Cashier-->Customer: Confirm booking and request payment + deposit
+Customer->Cashier: Make payment
+Cashier->HireStation: Confirm payment has gone through 
+HireStation -> HireStation: Update cash register and deposit pool on cashier instructions
+HireStation->Customer: Check scooter out to person 
+Customer->Scooter: Drive scooter
+== 45 minutes ==
+Customer->ChargingStation: Park scooter
+ChargingStation -> Scooter: Supply charge
+Scooter -> Battery: Charge battery
+== 15 minutes ==
+ChargingStation --> Customer: Confirm battery charged & release scooter
+Customer -> Scooter: Drive scooter to HireStation
+== 10 minutes ==
+Customer -> Cashier: Return Scooter
+Cashier -> HireStation: Check in Scooter and request deposit
+HireStation -> HireStation: Inspect scooter and (if in good condition next step to follow)
+== 5 minutes == 
+HireStation --> Cashier: Confirm deposit is fine to return; update cash register
+Cashier --> Customer: Return deposit
+
+
+
+
+'hide [<<stereotype>> or alias] [empty members,members,empty attributes,attributes,empty methods,methods,circle,stereotype,class,interface,enum]
+
+@@enduml
+

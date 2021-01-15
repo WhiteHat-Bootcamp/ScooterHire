@@ -1,0 +1,63 @@
+@@startuml
+
+left to right direction
+
+"Customer" as Cust
+"Cashier" as Cash
+"Mechanic" as M
+skinparam actorStyle Hollow
+"HireStation" as HS
+"Charging Station" as Ch
+
+
+package HireStation{
+    usecase "Book Scooter" as A1
+    usecase "Check Availability" as B1
+    usecase "Issue confirmation" as B2
+    usecase "Request Payment" as B3
+    usecase "Pay for Scooter" as A2
+    usecase "Update Cash Register" as C1
+    usecase "Check out Scooter" as A3
+    usecase "Return Scooter" as A4 
+    usecase "Check in Scooter" as C3
+    usecase "Inspect Scooter" as C2
+    usecase "Return deposit" as B4
+}
+
+Cust --> A1
+Cust --> A2
+Cust --> A3
+Cust --> A4
+
+Cash --> B1
+Cash --> B2
+Cash --> B3
+Cash --> B4
+
+HS --> B1
+HS --> B2
+HS --> C1
+HS --> A3
+HS --> C2
+HS --> C3
+
+package Scooter{
+    usecase "Drive Scooter" as AA1
+    usecase "Park Scooter" as AA2
+    usecase "Send Charge to Battery" as AA3
+    usecase "Fix Scooter" as M1
+    usecase "Supply Charge to Scooter" as BB2
+    usecase "Release Scooter" as BB1
+}
+
+Cust --> AA1
+Cust --> AA2
+Cust --> AA3
+
+M --> M1
+
+Ch --> BB1
+Ch --> BB2
+
+
+@@enduml

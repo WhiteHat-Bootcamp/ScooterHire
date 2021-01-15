@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1610560878681" clover="3.2.0">
-  <project timestamp="1610560878681" name="All files">
+<coverage generated="1610624907321" clover="3.2.0">
+  <project timestamp="1610624907322" name="All files">
     <metrics statements="60" coveredstatements="60" conditionals="13" coveredconditionals="12" methods="14" coveredmethods="14" elements="87" coveredelements="86" complexity="0" loc="60" ncloc="60" packages="1" files="6" classes="6"/>
     <file name="Airport.js" path="C:\Users\tanya\Documents\repos\WhiteHat\bootcamp\Airports\Airport.js">
       <metrics statements="18" coveredstatements="18" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>

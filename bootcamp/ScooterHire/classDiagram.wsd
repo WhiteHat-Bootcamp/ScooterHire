@@ -1,0 +1,88 @@
+@startuml
+
+title Scooter Hire System - Class Diagram
+
+
+class Scooter {
+  string plate
+  int wheels
+  bool isCharged
+  bool isBroken
+  bool category
+  {static} int depositRegular
+  void Drive()
+  void Park()
+}
+
+class NewElectricScooter{
+    {static} int depositElectric    
+}
+
+class Battery{
+    bool isDead
+    void Charge()
+}
+
+class ChargingStation{
+    {static} int locX
+    {static} int locY
+    bool pluggedIn
+    {static} [] allChargingStations
+}
+    
+class HireStation{
+    [] currentInventory
+    [] checkedOutScooters
+    {static} int locX
+    {static} int locY
+    int cashRegister
+    int depositPool
+    void checkOut()
+    void checkIn()
+    void renewCharge()
+}
+
+class Person{
+    string name
+    int cash
+}
+
+class Customer{
+    bool walletEmpty
+    void bookScooter()
+    void pay()
+    void callMechanic()
+    void returnScooter()
+}
+
+class Cashier{
+    void bookScooter()
+    void createOrder()
+    void returnDeposit()
+    void callMechanic()
+}
+
+class Mechanic{
+    void fixScooter()
+}
+
+
+Scooter "many" <|-up- NewElectricScooter: Inheritance
+Scooter "many" -right- "1" ChargingStation: Charges
+
+NewElectricScooter "many" -right- "many" ChargingStation: Stores
+
+Scooter "1" *-down- "1" Battery: Composition
+
+HireStation "1" -down- "many" Scooter: Aggregation
+HireStation "1" -down- "many" NewElectricScooter: Aggregation
+Cashier "many" -right- "1" HireStation: Works at
+
+Person "many" -down- "1" Scooter: Drives
+Person "many" -left- "1" HireStation: Orders
+Person "many" <|-up- "many" Customer: Inheritance
+Person "many" <|-up- "many" Cashier: Inheritance
+Person "many" <|-up- "many" Mechanic: Inheritance
+
+
+@enduml
