@@ -3,7 +3,7 @@ const Scooter = require('./Scooter.js');
 const HireStation = require('./HireStation.js');
 const Cashier = require('./Cashier.js');
 const ChargingStation = require('./ChargingStation.js');
-//const newElecricScooter = require('./NewElectricScooter.js');
+//const newElectricScooter = require('./NewElectricScooter.js');
 
 /**
  * @Class Customer - inherits from Person. Individual who rents Scooter. *
@@ -31,7 +31,7 @@ const ChargingStation = require('./ChargingStation.js');
     * @returns {void}
     */
 
-     requestScooter(standardOrElectric)
+     requestScooter(Cashier, standardOrElectric)
      {
         Cashier.bookScooter(standardOrElectric);
      }

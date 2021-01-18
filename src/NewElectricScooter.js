@@ -1,3 +1,4 @@
+//"use strict";
 const Scooter = require('./Scooter');
 
 /**
@@ -17,8 +18,10 @@ class NewElectricScooter extends Scooter
 
       constructor(plate, wheels, isCharged, isBroken)
       {
-        super(plate, wheels, isCharged, isBroken, 5, 5);
+        super(plate, wheels, isCharged, isBroken);
         this.deposit = 100; 
+        this.locX = 0;
+        this.locY = 0;
       }
 
       /**Methods are all inherited from Scooter */

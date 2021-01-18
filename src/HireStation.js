@@ -1,6 +1,6 @@
 const Scooter = require('./Scooter.js');
-const NewElectricScooter = ('./NewElectricScooter.js');
-const Cashier = require('./Cashier.js');
+//const NewElectricScooter = ('./NewElectricScooter.js');
+//const Cashier = require('./Cashier.js');
 const Customer = require('./Customer.js');
 
 /**
@@ -37,18 +37,29 @@ class HireStation
     * @param {array} allScooters
     */
 
-    constructor (locX, locY, allScooters)
+    constructor (locX, locY)
     {
         this.locX = locX;
         this.locY = locY;
-        this.allScooters = allScooters;
-        this.currentInventory = allScooters;
+        this.allScooters = [];
+        this.currentInventory = [];
         this.cashRegister = 0;
         this.depositPool = 0;
         this.hireCharge = 200;
     }
 
     /** Methods */
+
+    /**
+    * @description Adds scooters to hirestation
+    * @param {scooter} sc00ter - Standard or Electric
+    * @returns {void}
+    */
+   
+    addScooter(scooter) {
+        this.allScooters.push(scooter);
+        this.currentInventory.push(scooter);
+    }
    
    /**
     * @description Checks out a scooter from the hirestation warehoues

@@ -1,8 +1,8 @@
-const Scooter = require('./Scooter.js');
+//const Scooter = require('./Scooter.js');
 const HireStation = require('./HireStation.js');
 const Customer = require('./Customer.js');
 const Cashier = require('./Cashier.js');
-//const newElecricScooter = require('./NewElectricScooter.js');
+//const newElectricScooter = require('./NewElectricScooter.js');
 
 /**
  * @class Class represents the Charging Station

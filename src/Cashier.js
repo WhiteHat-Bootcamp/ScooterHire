@@ -1,10 +1,10 @@
 const prompt = require('prompt-sync')();
-const Person = require('./Person.js');
+//const Person = require('./Person.js');
 const Scooter = require('./Scooter.js');
 const HireStation = require('./HireStation.js');
 const Customer = require('./Customer.js');
-const ChargingStation = require('./ChargingStation.js');
-//const NewElecricScooter = require('./NewElectricScooter.js');
+//const ChargingStation = require('./ChargingStation.js');
+const NewElectricScooter = require('./NewElectricScooter.js');
 
 /**
  * @class Class represents the Cashier at the HireStation
@@ -33,7 +33,7 @@ const ChargingStation = require('./ChargingStation.js');
         //declare the variable for the scooter that the customer will hire
         let availableScooter; 
 
-        if (standardOrElectric.toLower() == "standard")
+        if (standardOrElectric.toLowerCase() == "standard")
         {
             scooterType = Scooter;
         }
@@ -86,6 +86,8 @@ const ChargingStation = require('./ChargingStation.js');
         console.log(`That's all gone through. You may collect your scooter out back. The plate number is ${availableScooter.plate}.`);
 
         HireStation.checkOut(availableScooter);
+
+        return true;
       }
 
     /**

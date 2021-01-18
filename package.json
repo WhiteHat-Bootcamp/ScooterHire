@@ -1,7 +1,6 @@
 {
   "name": "scooterhire",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "dependencies": {
     "ansi-styles": "^4.3.0",
@@ -216,5 +215,17 @@
   "license": "ISC",
   "jest": {
     "coverageDirectory": "./docs/coverage"
-  }
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WhiteHat-Bootcamp/ScooterHire.git"
+  },
+  "bugs": {
+    "url": "https://github.com/WhiteHat-Bootcamp/ScooterHire/issues"
+  },
+  "homepage": "https://github.com/WhiteHat-Bootcamp/ScooterHire#readme",
+  "description": ""
 }
