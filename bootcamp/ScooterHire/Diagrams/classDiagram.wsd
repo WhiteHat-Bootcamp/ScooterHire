@@ -9,13 +9,13 @@ class Scooter {
   bool isCharged
   bool isBroken
   bool category
-  {static} int depositRegular
+  {static} int deposit
   void Drive()
   void Park()
 }
 
 class NewElectricScooter{
-    {static} int depositElectric    
+    {static} int deposit  
 }
 
 class Battery{
@@ -45,11 +45,12 @@ class HireStation{
 class Person{
     string name
     int cash
+    void addCash()
 }
 
 class Customer{
     bool walletEmpty
-    void bookScooter()
+    void requestScooter()
     void pay()
     void callMechanic()
     void returnScooter()
