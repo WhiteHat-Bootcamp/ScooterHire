@@ -210,8 +210,11 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "jest"
+    "test": "jest --coverage=true"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "jest": {
+    "coverageDirectory": "./docs/coverage"
+  }
 }
