@@ -3,7 +3,12 @@ const Scooter = require('./Scooter.js');
 const HireStation = require('./HireStation.js');
 const Cashier = require('./Cashier.js');
 const ChargingStation = require('./ChargingStation.js');
+<<<<<<< HEAD
 //const newElectricScooter = require('./NewElectricScooter.js');
+=======
+//const newElecricScooter = require('./NewElectricScooter.js');
+//
+>>>>>>> 05fa1791f4fcfa5e2b4b681667bf5dda3a67a800
 
 /**
  * @Class Customer - inherits from Person. Individual who rents Scooter. *
