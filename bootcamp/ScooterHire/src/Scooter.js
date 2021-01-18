@@ -1,7 +1,7 @@
-const HireStation = require('./HireStation.js');
-const Cashier = require('./Cashier.js');
-const ChargingStation = require('./ChargingStation.js');
-const Customer = require('./Customer.js');
+// const HireStation = require('./HireStation.js');
+// const Cashier = require('./Cashier.js');
+// const ChargingStation = require('./ChargingStation.js');
+// const Customer = require('./Customer.js');
 
 /**
  * Class that represents the Scooter itself. 

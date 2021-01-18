@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: Cashier.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: Cashier.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const prompt = require('prompt-sync')();
+const Person = require('./Person.js');
+const Scooter = require('./Scooter.js');
+const HireStation = require('./HireStation.js');
+const Customer = require('./Customer.js');
+const ChargingStation = require('./ChargingStation.js');
+//const NewElecricScooter = require('./NewElectricScooter.js');
+
+/**
+ * @class Class represents the Cashier at the HireStation
+ */
+
+ class Cashier extends Person
+ {
+     /**
+      * Inherits constructor and properties from Person
+      */
+
+      constructor (name, cash)
+      {
+          super(name, cash);
+      }
+
+      /**
+        * @description The whole booking process (including inventory checking, payment and checkout)
+        * @param {scooter} sc00ter - Standard or Electric
+        * @returns {bool}
+        */
+      bookScooter(standardOrElectric)
+      {
+        // Ascertain whether customer wants a standard or electric scooter
+        let scooterType; 
+        //declare the variable for the scooter that the customer will hire
+        let availableScooter; 
+
+        if (standardOrElectric.toLower() == "standard")
+        {
+            scooterType = Scooter;
+        }
+        else 
+        {
+            scooterType = NewElectricScooter;
+        }
+        
+        // Check all inventory - if there are no scooters at all, tell the customer. 
+        if (HireStation.currentInventory.length &lt; 1)
+        {
+            console.log("Unfortunately we are out of scooters today! Maybe check back in an hour, or tomorrow.");
+            return false; 
+        }
+        else //Check the inventory for the customer's desired type 
+        {
+            for (i=0; i &lt; HireStation.currentInventory.length; i++)
+            {
+                if (HireStation[i] instanceof scooterType)
+                {
+                    if(HireStation[i].isBroken == true) //if the scooter is broken, call the mechanic and continue iterating
+                    {
+                        this.callMechanic(HireStation[i]);
+                        continue;
+                    }
+                    else
+                    {
+                        availableScooter = HireStation[i]; //assign the matching scooter to the customer
+                        break;
+                    }
+                }
+
+                else //if there are no scooters available in the customer's desired type, offer another, or end transaction
+                {
+                    const answer = prompt (`We do not have any ${scooterType} scooters available. Would you like another type of scooter instead? (YES/NO)`);
+                    if (answer == YES)
+                    {
+                        availableScooter = HireStation[i];
+                    }
+                    else
+                    { return false }
+                }
+            }
+        }
+
+        console.log(`Good news! We have a scooter available for you. I'll just need to collect payment and a deposit from you now. The hire charge is $ ${HireStation.hireCharge} and the deposit is $ ${availableScooter.deposit}.`);
+
+        Customer.makePayment(availableScooter.deposit);
+
+        console.log(`That's all gone through. You may collect your scooter out back. The plate number is ${availableScooter.plate}.`);
+
+        HireStation.checkOut(availableScooter);
+      }
+
+    /**
+     * @description Cashier returns a deposit to the customer
+     * @param {scooter} sc00ter - Standard or Electric
+     * @returns {void}*/
+
+      returnDeposit(sc00ter)
+      {
+        Customer.cash += sc00ter.deposit;
+        HireStation.depositPool -= sc00ter.deposit;
+      }
+
+    /**
+     * @description Calls the mechanic 
+     * @returns {void}*/
+
+      callMechanic()
+      {
+        console.log("A mechanic has been called.");
+      }
+ }
+
+ module.exports = Cashier;
+
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Cashier.html">Cashier</a></li><li><a href="ChargingStation.html">ChargingStation</a></li><li><a href="Constructs%2520a%2520charging%2520station%2520with%2520its%2520X%2520and%2520Y%2520coordinates..html">Constructs a charging station with its X and Y coordinates.</a></li><li><a href="Constructs%2520with%2520a%2520name%2520and%2520the%2520amount%2520of%2520cash%2520in%2520possession.html">Constructs with a name and the amount of cash in possession</a></li><li><a href="Customer.html">Customer</a></li><li><a href="Customer%2520-%2520inherits%2520from%2520Person.%2520Individual%2520who%2520rents%2520Scooter.%2520_.html"> *</a></li><li><a href="HireStation.html">HireStation</a></li><li><a href="NewElectricScooter.html">NewElectricScooter</a></li><li><a href="Person.html">Person</a></li><li><a href="Scooter.html">Scooter</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Mon Jan 18 2021 19:17:31 GMT+0000 (Greenwich Mean Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 const HireStation = require('../src/HireStation.js');
 const Scooter = require('../src/Scooter.js');
-const newElecricScooter = require('../src/NewElectricScooter.js');
+const NewElectricScooter = require('../src/NewElectricScooter.js');
 const { expect } = require('@jest/globals');
 
 describe ('HireStation', function()
