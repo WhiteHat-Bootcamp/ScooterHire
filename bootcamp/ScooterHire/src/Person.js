@@ -34,3 +34,5 @@
         this.cash += money;
     }
  }
+
+ module.exports = Person;

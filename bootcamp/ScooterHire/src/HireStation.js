@@ -9,9 +9,9 @@ const Customer = require('./Customer.js');
 class HireStation
 {
      /** 
-     * @property {array<Scooter>} allScooters;
-     * @property {array<Scooter>} currentInventory;
-     * @property {array<Scooter>} checkedOutScooters;
+     * @property {array} allScooters;
+     * @property {array} currentInventory;
+     * @property {array} checkedOutScooters;
      * @property {number} locX;
      * @property {number} locY;
      * @property {number} cashRegister;
@@ -24,9 +24,9 @@ class HireStation
     checkedOutScooters = []; //static scooter array
     locX; //static int
     locY; //static int
-    cashRegister; //int
-    depositPool; //int
-    hireCharge; //static int 
+    cashRegister = 0; //int
+    depositPool = 0; //int
+    hireCharge = 200; //static int 
 
    /**
     * Constructs with X and Y coordinates and the Scooters it has on Day 1
@@ -36,12 +36,15 @@ class HireStation
     * @param {array} allScooters
     */
 
-    constructor (locX, locY, allScooters=[])
+    constructor (locX, locY)
     {
         this.locX = locX;
         this.locY = locY;
-        this.allScooters = allScooters;
+        this.allScooters = [];
         this.currentInventory = allScooters;
+        this.cashRegister = 0;
+        this.depositPool = 0;
+        this.hireCharge = 200;
     }
 
     /** Methods */

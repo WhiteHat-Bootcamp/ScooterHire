@@ -1,9 +1,4 @@
-const HireStation = require('../src/HireStation.js');
-const Customer = require('../src/Customer.js');
-const ChargingStation = require('../src/ChargingStation.js');
-const Cashier = require('../src/Cashier.js');
 const Scooter = require('../src/Scooter.js');
-const NewElectricScooter = require('../src/NewElectricScooter.js');
 
 describe ('Scooter', function()
 {

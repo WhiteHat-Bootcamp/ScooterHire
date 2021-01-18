@@ -24,7 +24,7 @@ const Customer = require('./Customer.js');
     isBroken; //bool
     locX = 0; //int for X coordinate
     locY = 0; //int for Y coordinate
-    static depositRegular = 50; //int - represents £
+    static deposit = 50; //int - represents £
 
     /**Constructor - constructs with plate, wheels, charge and whether broken
      * @constructor 
@@ -32,9 +32,10 @@ const Customer = require('./Customer.js');
      * @param {number} wheels
      * @param {bool} isCharged
      * @param {bool} isBroken
+     * @param {HireStation} HireStation
      */
 
-    constructor (plate, wheels, isCharged, isBroken)
+    constructor (plate, wheels, isCharged, isBroken, HireStation)
     {
         this.plate = plate;
         this.wheels = wheels;
@@ -43,8 +44,8 @@ const Customer = require('./Customer.js');
         this.deposit = 50;
         this.locX = 0;
         this.locY = 0;
-        HireStation.allScooters.push(this);
-        HireStation.currentInventory.push(this);
+        //HireStation.allScooters.push(this);
+        //HireStation.currentInventory.push(this);
     }
 
     /**
@@ -86,4 +87,4 @@ const Customer = require('./Customer.js');
 
  }
 
- module.exports = Scooter;
+module.exports = Scooter;
