@@ -5,13 +5,13 @@ describe ('Scooter', function()
     test('Scooter is constructed as it should be', function(){
         const scootyroo = new Scooter(12345, 3, true, false);
 
-        expect(scootylee.plate).toEqual(12345);
-        expect(scootylee.wheels).toEqual(3);
-        expect(scootylee.isCharged).toEqual(true);
-        expect(scootylee.isBroken).toEqual(false);
-        expect(scootylee.deposit).toEqual(50);
-        expect(scootylee.locX).toEqual(0);
-        expect(scootylee.locY).toEqual(0);
+        expect(scootyroo.plate).toEqual(12345);
+        expect(scootyroo.wheels).toEqual(3);
+        expect(scootyroo.isCharged).toEqual(true);
+        expect(scootyroo.isBroken).toEqual(false);
+        expect(scootyroo.deposit).toEqual(50);
+        expect(scootyroo.locX).toEqual(0);
+        expect(scootyroo.locY).toEqual(0);
 
     })
 })

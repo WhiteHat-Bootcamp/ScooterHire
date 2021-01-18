@@ -35,7 +35,7 @@ const Customer = require('./Customer.js');
      * @param {HireStation} HireStation
      */
 
-    constructor (plate, wheels, isCharged, isBroken, HireStation)
+    constructor (plate, wheels, isCharged, isBroken)
     {
         this.plate = plate;
         this.wheels = wheels;

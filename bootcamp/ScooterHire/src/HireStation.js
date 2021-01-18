@@ -1,4 +1,5 @@
 const Scooter = require('./Scooter.js');
+const NewElectricScooter = ('./NewElectricScooter.js');
 const Cashier = require('./Cashier.js');
 const Customer = require('./Customer.js');
 
@@ -36,11 +37,11 @@ class HireStation
     * @param {array} allScooters
     */
 
-    constructor (locX, locY)
+    constructor (locX, locY, allScooters)
     {
         this.locX = locX;
         this.locY = locY;
-        this.allScooters = [];
+        this.allScooters = allScooters;
         this.currentInventory = allScooters;
         this.cashRegister = 0;
         this.depositPool = 0;

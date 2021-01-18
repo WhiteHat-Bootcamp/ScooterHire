@@ -1,9 +1,9 @@
-const NewElectricScooter = require('../src/NewElectricScooter.js');
 const Scooter = require('../src/Scooter.js');
+const NewElectricScooter = require('../src/NewElectricScooter.js');
 
 describe ('Electric Scooter', function()
 {
-    test('Scooter is constructed as it should be', function(){
+    test('Electric cooter is constructed as it should be', function(){
         const scootylee = new NewElectricScooter(12345, 3, true, false);
 
         expect(scootylee.plate).toEqual(12345);

@@ -17,7 +17,7 @@ class NewElectricScooter extends Scooter
 
       constructor(plate, wheels, isCharged, isBroken)
       {
-        //super(plate, wheels, isCharged, isBroken, locX, locY);
+        super(plate, wheels, isCharged, isBroken, locX, locY, HireStation);
         this.deposit = 100; 
       }
 
