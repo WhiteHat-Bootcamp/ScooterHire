@@ -31,9 +31,9 @@ const ChargingStation = require('./ChargingStation.js');
     * @returns {void}
     */
 
-     requestScooter(Cashier, standardOrElectric)
+     requestScooter(cashier, standardOrElectric)
      {
-        Cashier.bookScooter(standardOrElectric);
+        cashier.bookScooter(standardOrElectric);
      }
 
     /**

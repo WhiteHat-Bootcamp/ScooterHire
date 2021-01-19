@@ -95,9 +95,9 @@ const NewElectricScooter = require('./NewElectricScooter.js');
      * @param {scooter} sc00ter - Standard or Electric
      * @returns {void}*/
 
-      returnDeposit(sc00ter)
+      returnDeposit(sc00ter, customer)
       {
-        Customer.cash += sc00ter.deposit;
+        customer.cash += sc00ter.deposit;
         HireStation.depositPool -= sc00ter.deposit;
       }
 

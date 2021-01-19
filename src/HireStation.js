@@ -20,14 +20,14 @@ class HireStation
      * @property {number} hireCharge;
      */
    
-    allScooters = []; //static scooter array
-    currentInventoy = []; //static scooter array
-    checkedOutScooters = []; //static scooter array
-    locX; //static int
-    locY; //static int
-    cashRegister = 0; //int
-    depositPool = 0; //int
-    hireCharge = 200; //static int 
+    static allScooters = []; //static scooter array
+    static currentInventoy = []; //static scooter array
+    static checkedOutScooters = []; //static scooter array
+    static locX; //static int
+    static locY; //static int
+    static cashRegister = 0; //static int
+    static depositPool = 0; //static int
+    static hireCharge = 200; //static int 
 
    /**
     * Constructs with X and Y coordinates and the Scooters it has on Day 1
@@ -70,7 +70,6 @@ class HireStation
    {
         this.currentInventory.splice(this.currentInventory.indexOf(sc00ter), 1);
         this.checkedOutScooters.push(sc00ter);
-        Customer.checkOut(sc00ter);
    }
 
    /**
