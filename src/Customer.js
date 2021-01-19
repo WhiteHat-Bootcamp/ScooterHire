@@ -33,7 +33,7 @@ const ChargingStation = require('./ChargingStation.js');
 
      requestScooter(cashier, standardOrElectric)
      {
-        cashier.bookScooter(standardOrElectric);
+        cashier.bookScooter(this, standardOrElectric);
      }
 
     /**
@@ -63,11 +63,11 @@ const ChargingStation = require('./ChargingStation.js');
         sc00ter.isCharged = false; 
      }
 
-     returnScooter(sc00ter)
+     returnScooter(sc00ter, cashier)
      {
         HireStation.checkIn(sc00ter);
         HireStation.inspectScooter(sc00ter);
-        Cashier.returnDeposit(sc00ter);
+        cashier.returnDeposit(sc00ter);
      }
 
  }

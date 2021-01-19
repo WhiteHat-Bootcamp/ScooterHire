@@ -24,7 +24,7 @@ const ChargingStation = require('./ChargingStation.js');
     isBroken; //bool
     locX = 0; //int for X coordinate
     locY = 0; //int for Y coordinate
-    static deposit = 50; //int - represents £
+    deposit = 50; //int - represents £
 
     /**Constructor - constructs with plate, wheels, charge and whether broken
      * @constructor 
@@ -72,16 +72,14 @@ const ChargingStation = require('./ChargingStation.js');
         {
             console.log("You have parked at the Hire Station!");
         }
-
-        else if (this.locX == ChargingStation.locX & this.locY == ChargingStation.locY)
-        {
-            console.log("You have parked at the Charging Station!");
-            ChargingStation.chargeScooter(this);
-        }
-
+        //else if (this.locX == ChargingStation.locX & this.locY == ChargingStation.locY)
+        //{
+            //console.log("You have parked at the Charging Station!");
+            //ChargingStation.chargeScooter(this);
+        //}
         else
         {
-            console.log("You have parked in an unknown location.");
+            console.log("You have parked.");
         }
     }
 

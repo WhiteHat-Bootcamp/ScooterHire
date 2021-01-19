@@ -26,7 +26,7 @@ const NewElectricScooter = require('./NewElectricScooter.js');
         * @param {scooter} sc00ter - Standard or Electric
         * @returns {bool}
         */
-      bookScooter(standardOrElectric)
+      bookScooter(customer, standardOrElectric)
       {
         // Ascertain whether customer wants a standard or electric scooter
         let scooterType; 
@@ -81,7 +81,7 @@ const NewElectricScooter = require('./NewElectricScooter.js');
 
         console.log(`Good news! We have a scooter available for you. I'll just need to collect payment and a deposit from you now. The hire charge is $ ${HireStation.hireCharge} and the deposit is $ ${availableScooter.deposit}.`);
 
-        Customer.makePayment(availableScooter.deposit);
+        customer.makePayment(availableScooter.deposit);
 
         console.log(`That's all gone through. You may collect your scooter out back. The plate number is ${availableScooter.plate}.`);
 
