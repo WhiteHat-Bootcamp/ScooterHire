@@ -1,4 +1,4 @@
-//const Scooter = require('./Scooter.js');
+const Scooter = require('./Scooter.js');
 const HireStation = require('./HireStation.js');
 const Customer = require('./Customer.js');
 const Cashier = require('./Cashier.js');
@@ -33,9 +33,11 @@ class ChargingStation
       * @param {scooter} sc00ter 
       * @returns {bool}
       */
-    chargeScooter(sc00ter)
+    async chargeScooter(sc00ter)
     {
-      sc00ter.isCharged = true;
+      console.log("Charging will begin now.");
+      await new Promise(resolve => setTimeout(resolve, 2000)); //waiting two seconds for charge to complete 
+      sc00ter.isCharged = true; //this will print after the timer has executed
       console.log("Your scooter is fully charged again.");
     }
 
